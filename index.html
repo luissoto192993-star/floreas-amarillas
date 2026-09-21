@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Feliz día de las Flores Amarillas </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="musica1.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" onclick="toggleMusic()">🔊</button>
+
+    <div id="petals-container"></div>
+
+    <div class="app-container">
+        <!-- Pantalla 1: Inicio -->
+        <div class="screen active" id="screen-1">
+            <div class="content-wrapper animation-fade-up">
+                <div class="image-placeholder"><img src="snoopy1.gif" alt="Portada"></div>
+                <h1 class="title-main">Feliz día de las<br>Flores Amarillas<br>💛</h1>
+                <button class="btn-next delay-2" onclick="startExperience()">Comenzar</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 2 -->
+        <div class="screen" id="screen-2">
+            <div class="content-wrapper animation-pop">
+                <div class="image-placeholder"><img src="snoopy2.gif" alt="Recuerdo 1"></div>
+                <h2>Hola...</h2>
+                <p>Dicen que regalar flores amarillas es una promesa de quedarse.</p>
+                <button class="btn-next" onclick="nextScreen(3)">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 3 -->
+        <div class="screen" id="screen-3">
+            <div class="content-wrapper float-effect">
+                <div class="image-placeholder"><img src="snoopy3.gif" alt="Recuerdo 2"></div>
+                <h2 class="handwritten">Y aunque estemos<br>lejos...</h2>
+                <p>No quería que te quedaras sin las tuyas hoy.</p>
+                <button class="btn-next" onclick="nextScreen(4)">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 4 -->
+        <div class="screen" id="screen-4">
+            <div class="content-wrapper animation-fade-up">
+                <div class="image-placeholder"><img src="snoopy5.gif" alt="Recuerdo 3"></div>
+                <h2>No es mucho...</h2>
+                <p>Pero cada detalle de esta página está hecho pensando en ti.</p>
+                <button class="btn-next" onclick="nextScreen(5)">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 5 -->
+        <div class="screen" id="screen-5">
+            <div class="content-wrapper animation-pulse">
+                <div class="image-placeholder"><img src="snoopy4.gif" alt="Recuerdo 4"></div>
+                <h2 class="handwritten">Espero que<br>te haga sonreír mucho</h2>
+                <button class="btn-next" onclick="nextScreen(6)">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 6 -->
+        <div class="screen" id="screen-6">
+            <div class="content-wrapper">
+                <h2>Tengo algo un regalo para ti</h2>
+                <div class="envelope-wrapper animation-bounce" onclick="startFinale()">
+                    <div class="css-envelope env-large">
+                        <div class="envelope-flap"></div>
+                        <div class="heart-seal">❤️</div>
+                    </div>
+                </div>
+                <p class="animation-fade-up delay-1">Toca la carta para abrirla</p>
+            </div>
+        </div>
+
+        <!-- Pantalla 7: Ramo 3D -->
+        <div class="screen" id="screen-7">
+            <canvas id="stars-canvas"></canvas>
+            
+            <div class="final-text-container">
+                <h1 class="title-final">¡Para ti TQM</h1>
+                <p class="glow-text">Feliz 21 de Septiembre 💛 mi niña</p>
+            </div>
+            
+            <div id="scene-3d">
+                <div id="world-3d">
+                    <!-- Ramo y lazo se inyectan aquí -->
+                    <div id="ribbon" class="ribbon">
+                        <div id="mini-letter" class="mini-letter" onclick="openLetter()">
+                            <div class="css-envelope env-mini">
+                                <div class="envelope-flap"></div>
+                                <div class="heart-seal">❤️</div>
+                            </div>
+                            <span class="click-me">¡Ábreme!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARTA MODAL -->
+    <div id="letter-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLetter()">&times;</span>
+            <h3 class="handwritten" style="color: var(--highlight); font-size: 2.5rem; margin-bottom: 15px;">Mi niña❤️...</h3>
+            <p>Quería regalarte estas flores amarillas porque representas alegría, luz, cariño y amor para mí. Ojalá este pequeño detalle virtual te ilumine el día tanto como tú iluminas los míos.</p>
+            <p>Gracias por estar conmigo TQM❤️</p>
+            <h3 class="handwritten" style="color: var(--pink); margin-top: 20px; font-size: 2rem;">Enteramente, LuisS</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
